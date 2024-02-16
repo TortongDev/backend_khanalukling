@@ -51,7 +51,7 @@ class Connection {
         $payload = array(
             'username' => '',
             'password' => '',
-            'time'     => time()
+            'time'     => time()+200
         );
         $header_encode = base64_encode(json_encode($header));
         $payload_encode = base64_encode(json_encode($payload));
