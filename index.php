@@ -1,6 +1,6 @@
 <?php
 require_once (__DIR__ . '/vendor/autoload.php');
-require_once ('./App/Login.php');
+require_once ('./App/Controllers.php');
 $router = new AltoRouter();
 $router->setBasePath('/backend_khanalukling');
 $router->map( 'GET', '/', function() {
@@ -12,8 +12,8 @@ $router->map( 'GET', '/get', function() {
 $router->map( 'GET', '/content/form', function() {
 	require __DIR__ . '/Views/content.form.php';
 });
-$router->map( 'GET', '/login/[i:id]/',[new Login,'login'], 'logins');
-
+$router->map( 'GET', '/login/[i:id]/',[new Controllers,'login'], 'logins');
+$router->map( 'GET', '/authen/addContent',[new Controllers,'index'], 'index');
 $match = $router->match();
 // $linkToIndex = $router->generate('logins');
 require_once __DIR__."/Includes/header-config.php";
