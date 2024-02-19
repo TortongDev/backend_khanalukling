@@ -3,6 +3,9 @@ require_once(dirname(__DIR__) ."/App/Connection.php");
 class Migration
 {
     public function __construct(){
+                    
+    }
+    public function run(){
         $conn = new Connection(true);
         $check_table = $conn->pdo->query("SHOW TABLES");
         $r = $check_table->fetch(PDO::FETCH_ASSOC);
@@ -21,13 +24,9 @@ class Migration
                 return;
             }
         endif;
-                    
+ 
     }
 }
-new Migration();
-
-// while($r = $table->fetch(PDO::FETCH_ASSOC)):
-
-// endwhile;
-// $create = new Controllers();
-// $create->api();
+$migrate = new Migration();
+// $migrate->run(); // เปิด Comment เพื่อทำการ Migration
+?>
