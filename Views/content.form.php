@@ -12,6 +12,14 @@
     <input type="date" name="date_end" id="date_end" class="w3-input">
   </div>
   <div class="form-group">
+    <label for="">Type</label>
+    <select name="content_type" id="content_type" class="w3-input">
+      <option value="">----- เลือก -----</option>
+      <option value="review">รีวิว</option>
+      <option value="news">ข่าวสาร</option>
+    </select>
+  </div>
+  <div class="form-group">
     <label for="">description</label>
     <input type="text" name="content_description" id="content_description" class="w3-input">
   </div>
@@ -36,6 +44,7 @@
     formData.append('date_start', document.querySelector('[name=date_start]').value)
     formData.append('date_end', document.querySelector('[name=date_end]').value)
     formData.append('content_description', document.querySelector('[name=content_description]').value)
+    formData.append('content_type', document.querySelector('[name=content_type]').value)
     formData.append('editor', document.querySelector('#editor').innerHTML)
     const fetchData = async () => {
       const response = await fetch('http://localhost/backend_khanalukling/api/get-content', {

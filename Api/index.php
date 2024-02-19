@@ -8,7 +8,7 @@ $router->setBasePath('/backend_khanalukling/Api');
 
 $router->map("GET","/fetch/content-api/[a:token]/",[new Content(),'contentAll'],'contentAll');
 
-$router->map("POST","/get-content",[new Controllers(),'api'],'api');
+$router->map("POST","/post-content",[new Controllers(),'api'],'api');
 
 $router->map("GET","/webapi",function(){
 	require __DIR__.'/webapi.php';
