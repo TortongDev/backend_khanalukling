@@ -47,7 +47,7 @@
     formData.append('content_type', document.querySelector('[name=content_type]').value)
     formData.append('editor', document.querySelector('#editor').innerHTML)
     const fetchData = async () => {
-      const response = await fetch('http://localhost/backend_khanalukling/api/get-content', {
+      const response = await fetch('http://localhost/backend_khanalukling/api/post-content', {
         method: 'POST',
         body: formData
       });
