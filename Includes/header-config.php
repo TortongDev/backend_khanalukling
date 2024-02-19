@@ -7,7 +7,8 @@
         <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
         <script src="https://kit.fontawesome.com/833cbfbd69.js" crossorigin="anonymous"></script>
-   
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
             html , body {
@@ -44,6 +45,27 @@
                 text-align: center;
                 padding-block: 20px;
             }
+            nav {
+                height: 30px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            nav > ul {
+                margin: 0;
+                list-style: none;
+                margin-inline: 0;
+                margin-block: 0;
+                padding-inline: 10px;
+                padding-block: 0;
+            }
+            nav > ul > li {
+                /* padding-right: 10px; */
+                display: inline;
+            }
+            .form-group {
+                margin-block: 10px;
+            }
         </style>
     </head>
 <body>
@@ -54,6 +76,12 @@
         <i class="fa-solid fa-circle" id="btn-white" style="color:white"></i>
     </div>
 </header>
+<nav>
+    <ul>
+        <li>เพิ่มข้อมูล</li>
+        <li>รายงาน</li>
+    </ul>
+</nav>
 <script>
     const btnBlack = document.querySelector('#btn-black')
 

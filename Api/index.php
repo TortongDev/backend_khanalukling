@@ -1,11 +1,14 @@
 <?php
 require_once (dirname(__DIR__) . '/vendor/autoload.php');
-require_once ('../App/Content.php');
+require_once (dirname(__DIR__).'/App/Content.php');
+require_once (dirname(__DIR__).'/App/Controllers.php');
+
 $router = new AltoRouter();
 $router->setBasePath('/backend_khanalukling/Api');
 
 $router->map("GET","/fetch/content-api/[a:token]/",[new Content(),'contentAll'],'contentAll');
 
+$router->map("POST","/get-content",[new Controllers(),'api'],'api');
 
 $router->map("GET","/webapi",function(){
 	require __DIR__.'/webapi.php';
