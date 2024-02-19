@@ -9,6 +9,5 @@
     define('PASS',$_ENV['PASS']);
     define('DBN',$_ENV['DBN']);
     define('TYPE_DB',$_ENV['TYPE_DB']);
-
-    
+    define('SECRET_KEY',$_ENV['SECRET_KEY']);
 ?>
