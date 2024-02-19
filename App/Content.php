@@ -1,14 +1,13 @@
 <?php
-class Content {
+require_once(dirname(__DIR__) ."/App/API.php");
+session_start();
+class Content extends API {
     public function __construct() {
-        header('Content-type: application/json');
-        header('Access-Control-Allow-Origin: *');
-        session_start();
+      parent::__construct();
     }
     public function contentAll($token) {
-        echo 'Your Token Api : '.$token;
-        if($token !== $_SESSION['CSRF_TOKEN']){
-            exit;
+        if($token !== $_SESSION['TOKEN']){
+            return false;  
         }
         $content = array(
             array(

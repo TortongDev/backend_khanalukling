@@ -37,25 +37,6 @@ class Connection {
     public function disconnect(){
         $this->pdo = NULL;
     }
-   
-    public function jsonWebToken($secret_key, $header, $payload){
-        $header = array(
-            'type' => '',
-            'algo' => ''
-        );
-        $payload = array(
-            'username' => '',
-            'password' => '',
-            'time'     => time()+200
-        );
-        $header_encode = base64_encode(json_encode($header));
-        $payload_encode = base64_encode(json_encode($payload));
-        $signature = hash_hmac('sha256' , $header_encode.''.$payload_encode , $secret_key);
-        return base64_encode($signature);
-
-
-    }
-
 }
 $conn = new Connection(true);
 
