@@ -28,5 +28,5 @@ class Migration
     }
 }
 $migrate = new Migration();
-// $migrate->run(); // เปิด Comment เพื่อทำการ Migration
+$migrate->run(); // เปิด Comment เพื่อทำการ Migration
 ?>

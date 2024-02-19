@@ -21,4 +21,12 @@ class Controllers {
             $_POST['editor']
         ]);
     }
+    public function getContent(){
+        $conn = new Connection(true);
+        $data = $conn->pdo->query("select * from tb_content where 1=1");
+        while($r = $data->fetchAll(PDO::FETCH_ASSOC)):
+            $json[] = $r;
+        endwhile;
+        echo json_encode($json);
+    }
 }
