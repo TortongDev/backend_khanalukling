@@ -4,12 +4,13 @@ require_once ('../App/Content.php');
 $router = new AltoRouter();
 $router->setBasePath('/backend_khanalukling/Api');
 
-$router->map("GET","/content/all/",[new Content(),'contentAll'],'contentAll');
+$router->map("GET","/fetch/content-api/[a:token]/",[new Content(),'contentAll'],'contentAll');
 
 
 $router->map("GET","/webapi",function(){
 	require __DIR__.'/webapi.php';
 });
+
 
 $match = $router->match();
 

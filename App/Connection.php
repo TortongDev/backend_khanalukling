@@ -37,12 +37,7 @@ class Connection {
     public function disconnect(){
         $this->pdo = NULL;
     }
-    public function csrf(){
-        session_start();
-        $csrf_random = bin2hex(random_bytes(20));
-        $_SESSION['CSRF_TOKEN'] = $csrf_random;
-        return $csrf_random;
-    }
+   
     public function jsonWebToken($secret_key, $header, $payload){
         $header = array(
             'type' => '',
