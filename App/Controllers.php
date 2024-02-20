@@ -27,10 +27,10 @@ class Controllers {
         VALUES (?,?,?,?,?)");
 
         $stmt->execute([
-            htmlspecialchars($topic),
+            $topic,
             $_POST['date_start'],
             $_POST['date_end'],
-            htmlspecialchars($content_description),
+            $content_description,
             $_POST['editor']
         ]);
     }

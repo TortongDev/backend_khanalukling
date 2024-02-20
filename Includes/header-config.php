@@ -66,6 +66,10 @@
             .form-group {
                 margin-block: 10px;
             }
+            .ql-editor .ql-blank {
+             
+
+            }
         </style>
     </head>
 <body>

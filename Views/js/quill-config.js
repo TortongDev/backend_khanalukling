@@ -1,12 +1,11 @@
 
-const quill = new Quill('#editor', {
+const quill = new Quill('#editor1', {
     theme: 'snow',
     modules: {
         toolbar: [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
             ['link', 'image', 'video', 'formula'],
-          
             [{ 'header': 1 }, { 'header': 2 }],               // custom button values
             [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
             [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
@@ -18,9 +17,7 @@ const quill = new Quill('#editor', {
           
             [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
             [{ 'font': [] }],
-            [{ 'align': [] }],
-          
-            ['clean']                                         // remove formatting button
+            [{ 'align': [] }]
           ]
         
     }
