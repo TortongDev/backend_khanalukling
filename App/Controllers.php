@@ -13,11 +13,13 @@ class Controllers {
     }
     public function api(){
         $topic = filter_input(INPUT_GET,"topic", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $token = filter_input(INPUT_GET,"token", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-       
         $content_description = filter_input(INPUT_GET,"content_description", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        
+        $topic = isset($topic) ? htmlspecialchars(trim($topic)) : '';
+        $content_description = isset($content_description) ? htmlspecialchars(trim($content_description)) : '';
         $conn = new Connection(true);
-        $stmt = $conn->pdo->prepare("INSERT INTO tb_content (
+       
+       $stmt = $conn->pdo->prepare("INSERT INTO tb_content (
             topic, 
             date_start, 
             date_end, 
