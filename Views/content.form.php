@@ -1,4 +1,7 @@
+<?php require_once dirname(__DIR__)."/App/CSRFProtect.php";  ?>
+
 <form action="" method="post" class="w3-container">
+  <input type="hidden" name="token" value="<?php echo $csrf->csrf(); ?>">
   <div class="form-group">
     <label for="topic">Topic</label>
     <input type="text" name="topic" id="topic" class="w3-input">
