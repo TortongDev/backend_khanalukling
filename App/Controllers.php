@@ -35,36 +35,25 @@ class Controllers {
         ]);
     }
     public function getContent($token){
-        if(!empty($_SESSION['CSRF_TOKEN'])):
-
-            if($_SESSION['CSRF_TOKEN'] == $token){
-                $conn = new Connection(true);
-                $data = $conn->pdo->query("
-                    SELECT 
-                        topic, 
-                        date_start, 
-                        date_end, 
-                        content_description, 
-                        content_text 
-                    FROM tb_content WHERE 1=1
-                ");
-                while($r = $data->fetch(PDO::FETCH_ASSOC)):
-                    $json[] = array(
-                        'topic'        => $r['topic'],
-                        'date_start'   => $r['date_start'],
-                        'date_end'     => $r['date_end'],
-                        'content_desc' => $r['content_description'],
-                        'content_type' => $r['content_text']
-                    );
-                endwhile;
-                echo json_encode($json);
-            }else{
-                echo "Not Permission.";
-            }
-        else:
-            return 0;
-        endif;
-
-        
+        $conn = new Connection(true);
+        $data = $conn->pdo->query("
+            SELECT 
+                topic, 
+                date_start, 
+                date_end, 
+                content_description, 
+                content_text 
+            FROM tb_content WHERE 1=1
+        ");
+        while($r = $data->fetch(PDO::FETCH_ASSOC)):
+            $json[] = array(
+                'topic'        => $r['topic'],
+                'date_start'   => $r['date_start'],
+                'date_end'     => $r['date_end'],
+                'content_desc' => $r['content_description'],
+                'content_type' => $r['content_text']
+            );
+        endwhile;
+        echo json_encode($json);
     }
 }
